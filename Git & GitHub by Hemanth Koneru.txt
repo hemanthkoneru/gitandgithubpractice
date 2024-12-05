@@ -1,0 +1,134 @@
+- First install git in your machine.
+
+   $ sudo yum install git -y (for Linux/RHEL/Centos)
+
+- Check whether git is installed in your machine or not.
+
+   $ git --version
+
+- After installing git version, then we need to configure the user name and user email for the first time.
+
+   $ git config --global user.name '<username>'
+
+ 
+   $ git config --global user.email '<emailID>'
+
+- Then change your directory or move to your project directory and initalise the git in that directory.
+
+   $ git init
+
+- now after executing the above command, if we list that directory , we will be able to see a hidden ".git" folder. It means git has been successfully initialized.No need for us to handle this folder. Git will handle everything inside from "Commit History", branches we will make, remote repos. 
+
+   $ ls -la
+
+- Now if we observe, we have "master" there on our terminal. 
+
+- What does this master means?
+
+  Master is the default branch name of a repository created by "git" . Every time we initialize git, this master branch will be created automatically by default.
+
+- Then what is a branch?
+
+ In git "branch" is nothing but a parallel version of your project.
+
+- Now let us create some files and track changes.
+
+  create a file called "hello.js"
+
+   $ vi hello.js
+
+   add below basic java code in that file
+
+   console.log("Hello, Git!")
+
+   save the file by using "wq!"
+
+   Now create another file called "readme.md"
+
+    $ vi readme.md
+
+   add below text in that file
+
+   ##Hello, Git!  (then save it)
+
+
+- SO far we have added 2 files "hello.js & readme.md"
+
+- Now run 
+
+   $ git status
+
+  then it will give you message as below
+
+  " On branch master
+
+    No commits yet
+
+    Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .idea/
+        Git & GitHub by Hemanth Koneru.txt
+        hello.js
+        readme.md
+
+   nothing added to commit but untracked files present (use "git add" to track)"
+
+- To track the files, we need to run
+
+  $ git add readme.md
+
+  we have successfully added the file
+
+- After adding the file, we need to commit it.
+
+committing is like taking a snapshot of your project at  a certain point. We can think of it like as creating a whole new copy of our folder and telling git  to remember like, when you did it and at what time you did it.
+
+In future if any thing happens , we will time travel to the folder with the  commit name we specify to get and see what you had in there.
+
+It is essential to commit our changes regularly.
+
+Regular commits, help you keep track of our progress and make it easier to revert to previous versions if you break something.
+
+We can commit by running the below command
+
+ $ git commit -m '<specify your message>' 
+ (here "m = message")
+
+  after executing the above command, we will get the below message.
+
+  " [master (root-commit) 1944d87] add readme.md
+   1 file changed, 1 insertion(+)
+   create mode 100644 readme.md "
+
+- previously we have created 2 files, but we have committed only one file that is "readme.md" and one more file (hello.js) is still available in local directory and that is untracked.
+
+   check by running 
+
+   $ git status
+
+   below is the message we get
+
+	" On branch master
+   	Untracked files:
+  	(use "git add <file>..." to include in what will be committed)
+        .idea/
+        hello.js
+
+	nothing added to commit but untracked files present (use "git add" to track)"
+
+If you want to track the other file also then we need to add and commit that file as well by using commands " git add <filename> & git commit -m <message>".
+
+It looks like we had to do a lot of work by repeating the same commands mutlipe times. Instead of adding the files one each time, we can add all by using "." as below and git will track all the files.
+
+  $ git add . 
+
+
+
+
+    
+
+
+
+
+
+  
